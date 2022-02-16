@@ -1,0 +1,422 @@
+@charset "UTF-8";
+html {
+font-size: 62.5%;
+}
+body {
+background-color: #485EB6;
+color: #C7CDE6;
+font-family: 'Hiragino Maru Gothic ProN', 'メイリオ','Montserrat Alternates', sans-serif;
+letter-spacing: 0.1em;
+
+}
+img {
+max-width: 100%;
+vertical-align: bottom;
+}
+li {
+list-style: none;
+}
+.wrapper {
+margin-left: auto;
+margin-right: auto;
+width: 80%;
+color: #1837b3;
+background-size:  cover;
+}
+.content {
+margin: 50px 0;
+/* background-color: #ffffff; */
+padding: 20px 50px;
+}
+.content .title{
+font-size: 2rem;
+margin-bottom: 5px;
+}
+.content .item{
+font-size: 1.4rem;
+margin-bottom: 20px;
+}
+
+
+/* ボタンの波紋 */
+/*== 無限に波紋が広がる */
+
+.btnripple2{
+/*波紋の基点とするためrelativeを指定*/
+position: relative;
+/*波紋の形状*/
+display:inline-block;
+background:#333;
+width:70px;
+height:70px;
+border-radius: 50%;
+color:#ccc;
+outline: none;
+/*アニメーションの設定*/
+transition: all .3s;
+}
+
+/*hoverした際の背景色の設定*/
+.btnripple2:hover{
+background:#666;	
+}
+
+/*波形を2つ設定*/
+.btnripple2::after,
+.btnripple2::before {
+content: '';
+/*絶対配置で波形の位置を決める*/
+position: absolute;
+left: -25%;
+top: -25%;
+/*波形の形状*/
+border: 1px solid #C7CDE6;
+width: 150%;
+height: 150%;
+border-radius: 50%;
+/*はじめは不透明*/
+opacity: 1;
+/*ループするアニメーションの設定*/
+animation:1s circleanime linear infinite;
+}
+
+/*波形の2つ目は0.5秒遅らせてアニメーション*/
+.btnripple2::before {
+animation-delay:.5s; 
+}
+
+/*波形のアニメーション*/
+@keyframes circleanime{
+0%{
+transform: scale(0.68);
+}
+100%{
+transform: scale(1.2);
+opacity: 0;
+}
+}
+
+/*中央矢印*/
+.btnripple2 span::after {
+content: '';
+/*絶対配置で矢印の位置を決める*/
+position: absolute;
+top: 38%;
+left: 45%;
+/*矢印の形状*/
+border: 14px solid transparent;
+border-top-width: 10px;
+border-bottom-width: 10px;
+border-left-color: #fff;
+}
+
+.bg1 {
+position: relative;
+}
+.bg2 {
+display: none;
+}
+.mainvisual1 {
+position: absolute;
+width: 60%;
+left: 25%;
+}
+.mainvisual2 {
+display:none;
+}
+
+.content {
+position: relative;
+bottom: 400px;
+color: #C7CDE6;
+margin-bottom: -200px;
+}
+
+.inner {
+position: relative;
+color: #C7CDE6;
+display: flex;
+float: right;
+bottom: 300px;
+left: -10%;
+font-size: 2.5rem;
+}
+.inner .title {
+margin-right: 100px;
+padding: 15px 0;
+}
+
+html,body{
+height: 100%;/*高さを100%にして描画エリアをとる*/
+}
+
+#particles-js{ 
+position:fixed;/*描画固定*/
+z-index:-1;/*描画を一番下に*/
+width: 100%;
+height: 100%;
+background-color:#485EB6/*背景色*/
+}
+
+#snow{
+position: relative;/*描画を#particles-jsよりも上にするためposition:relative;を指定*/
+z-index: 1;/*z-indexの数字を大きくすることで描画を#particles-jsよりも上に*/
+width:100%;
+height: 100%;
+}
+
+
+
+/*-------------------------------------------
+#header
+-------------------------------------------*/
+#header h1 {
+font-size: 8rem;
+font-family: 'Montserrat Alternates', sans-serif;
+padding: 100px 100px;
+text-align: left;
+}
+/*-------------------------------------------
+#footer
+-------------------------------------------*/
+#footer {
+margin-top: 200px;
+margin-bottom: 20px;
+background-color: #485EB6;
+/* width: 80%; */
+text-align: center;
+
+
+}
+#footer .contact {
+color: rgba(255, 255, 255, 0.802);
+width: 5%;
+margin-bottom: 20px;
+}
+#footer .copyright {
+font-family: 'Montserrat Alternates', sans-serif;
+font-size: 2rem;
+color: rgba(255, 255, 255, 0.802);
+}
+
+
+
+/*-------------------------------------------
+SP
+-------------------------------------------*/
+@media screen and (max-width:3200px) { 
+.content {
+bottom: 800px;
+}
+.content .title{
+font-size: 3.5rem;
+}
+.content .item{
+font-size: 2.5rem;
+}
+
+
+.inner {
+bottom: 600px;
+
+}
+}
+@media screen and (max-width:2500px) { 
+.content {
+bottom: 700px;
+}
+.content .title{
+font-size: 3rem;
+}
+.content .item{
+font-size: 2.2rem;
+}
+
+
+.inner {
+bottom: 400px;
+
+}
+}
+
+
+
+@media screen and (max-width:2000px) { 
+.content {
+bottom: 500px;
+}
+.content .title{
+font-size: 2.5rem;
+}
+.content .item{
+font-size: 1.8rem;
+}
+
+
+.inner {
+bottom: 400px;
+
+}
+
+@media screen and (max-width:1400px) { 
+.content {
+bottom: 400px;
+}
+.content .title{
+font-size: 2.2rem;
+}
+.content .item{
+font-size: 1.4rem;
+}
+
+.inner {
+bottom: 300px;
+}
+}
+
+@media screen and (max-width:1200px) { 
+.wrapper {
+width: 90%;
+}
+.inner {
+font-size: 2rem;
+}
+.inner .title {
+margin-right: 50px;
+}
+
+
+}
+
+@media screen and (max-width:900px) { 
+
+#header h1 {
+font-size: 7rem;
+padding: 100px 50px;
+
+}
+.wrapper {
+width: 90%;
+}
+.content {
+bottom: 380px;
+}
+.content .title{
+font-size: 2rem;
+}
+.content .item{
+font-size: 1.2rem;
+}
+.inner {
+font-size: 1.5rem;
+bottom: 300px;
+
+}
+.inner .title {
+margin-right: 50px;
+}
+
+
+}
+
+
+
+
+@media screen and (max-width:670px) { 
+#header h1 {
+font-size: 6.5rem;
+padding: 100px 20px;
+
+}
+
+
+.inner {
+font-size: 2.2rem;
+}
+.inner .title {
+margin-right: 50px;
+}
+/* 背景をiPhone用に差し替え */
+.bg1 {
+display: none;
+}
+.bg2 {
+position: relative;
+display: block;
+}
+
+/* 画像をiPhoneに差し替え */
+.mainvisual1 {
+display:none;
+}
+.mainvisual2 {
+display: block;
+position: relative; 
+width: 50%;
+left: 40%;
+bottom: 1000px;
+margin-bottom: -500px;
+}
+
+.content {
+bottom: 400px;
+
+}
+.content .title{
+font-size: 1.5rem;
+}
+.content .item{
+font-size: 1rem;
+}
+.inner {
+font-size: 1.2rem;
+bottom: 220px;
+
+}
+
+
+}
+@media screen and (max-width:450px) { 
+#header h1 {
+font-size: 6rem;
+}
+
+
+.inner {
+font-size: 2rem;
+}
+.inner .title {
+margin-right: 50px;
+}
+
+.mainvisual2 {
+width: 50%;
+left: 40%;
+bottom: 800px;
+margin-bottom: -450px;
+}
+
+.content {
+bottom: 400px;
+
+}
+.content .title{
+font-size: 1.5rem;
+}
+.content .item{
+font-size: 1rem;
+}
+.inner {
+font-size: 1.2rem;
+bottom: 220px;
+
+}
+#footer .copyright {
+font-family: 'Montserrat Alternates', sans-serif;
+font-size: 1.5rem;
+color: rgba(255, 255, 255, 0.802);
+}
+
+}
+}
+
